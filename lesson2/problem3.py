@@ -1,5 +1,6 @@
 import numpy as np
 from general_functions import array_int
+from numpy.typing import NDArray
 
 def problem3() -> None:
     print("Введите массив 1: ", end="")
@@ -9,13 +10,13 @@ def problem3() -> None:
     listIntersection = intersectionLists(list1, list2)
     print(*listIntersection, sep=" ")
 
-def find(array: np.ndarray, elm: np.int64) -> bool:
+def find(array: NDArray[np.int64], elm: np.int64) -> bool:
     for i in array:
         if elm == i:
             return True
     return False
 
-def intersectionLists(array1: np.ndarray , array2: np.ndarray) -> np.ndarray:
+def intersectionLists(array1: NDArray[np.int64], array2: NDArray[np.int64]) -> NDArray[np.int64]:
     intersection_list = []
     if len(array1) > len(array2):
         array1, array2 = array2, array1
