@@ -16,8 +16,8 @@ class DataPeople():
         if peoples == None:
             self.peoples = list()
 
-    def load(self) -> None:
-        file = load_file()
+    def load(self, name: str) -> None:
+        file = load_file(name, "r+")
         if not self._load_from_file(file):
             raise "Жопа"
 
@@ -98,10 +98,10 @@ class DataPeople():
         if(len(self.peoples) == size):
             print("Такого номера в списке нет")
             return
-        file = open('peoples.txt', 'w', encoding='utf-8')
+        file = load_file("peoples.txt", "w")
         for people in self.peoples:
             file.write(people["surname"] + ' ' + people["name"] + " " + str(people["age"]) + " " + str(people["index"]) + '\n')
         file.close()
-        file = open('peoples.txt', 'r+', encoding='utf-8')
+        file = load_file("peoples.txt", "r+")
 
 

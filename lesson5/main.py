@@ -4,7 +4,7 @@ from people import DataPeople
 def main():
     show_menu()
     dataPeople = DataPeople()
-    dataPeople.load()
+    dataPeople.load("peoples.txt")
     complete_the_task(dataPeople)
 
 if __name__ == "__main__":

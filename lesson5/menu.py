@@ -25,7 +25,7 @@ def complete_the_task(dataPeople: DataPeople):
     while(True):
         cmd = _getting_task()
         if cmd == 1:
-            file = load_file()
+            file = load_file("peoples.txt", "r+")
             dataPeople.input_people(file)
         elif cmd == 2:
             dataPeople.print_people_on_index()
@@ -34,7 +34,7 @@ def complete_the_task(dataPeople: DataPeople):
         elif cmd == 4:
             dataPeople.print()
         elif cmd == 5:
-            file = load_file()
+            file = load_file("peoples.txt", "r+")
             dataPeople.delete_people(file)
         elif cmd == 6:
             print("Выход")
